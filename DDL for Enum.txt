@@ -17,3 +17,25 @@ id int auto_increment primary key,
 title varchar(50) not null unique,
 `status` enum('O', 'REV', 'A', 'REJ') -- O: open, REV:review, A:approved, REJ:reject
 );
+
+
+create table article_uuid(
+id 	varchar(100) primary key,
+title varchar(50) not null unique,
+`status` tinyint not null -- 0: open, 1:review, 2:approved, 3:reject
+);
+
+
+create table article_custom_id(
+`code` 	varchar(100) primary key,
+title 	varchar(50) not null unique,
+`type` 	varchar(50) not null
+);
+
+
+create table `order`(
+	order_id int not null,
+	product_id int not null,
+	note varchar(50) not null,
+	primary key (order_id, product_id)
+)

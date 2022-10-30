@@ -1,8 +1,6 @@
 package com.anmv.utils;
 
-import com.anmv.entity.Article;
-import com.anmv.entity.Book;
-import com.anmv.entity.News;
+import com.anmv.entity.*;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
@@ -35,6 +33,11 @@ public class HibernateUtils {
         configuration.addAnnotatedClass(Article.class);
         configuration.addAnnotatedClass(News.class);
         configuration.addAnnotatedClass(Book.class);
+        configuration.addAnnotatedClass(ArticleGenerator.class);
+        configuration.addAnnotatedClass(ArticleUuidGenerator.class);
+        configuration.addAnnotatedClass(CustomId.class);
+        configuration.addAnnotatedClass(Order.class);
+        configuration.addAnnotatedClass(Order2.class);
     }
 
     private SessionFactory buildSessionFactory() {
